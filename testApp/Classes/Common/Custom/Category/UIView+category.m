@@ -1,0 +1,270 @@
+//
+//  UIView+category.m
+//
+//  Created by zhaoying on 16/7/22.
+//  Copyright © 2016年 赵莹. All rights reserved.
+//
+
+#import "UIView+category.h"
+
+CGPoint CGRectGetCenter(CGRect rect)
+{
+    CGPoint pt;
+    pt.x = CGRectGetMidX(rect);
+    pt.y = CGRectGetMidY(rect);
+    return pt;
+}
+
+CGRect CGRectMoveToCenter(CGRect rect, CGPoint center)
+{
+    CGRect newrect = CGRectZero;
+    newrect.origin.x = center.x-CGRectGetMidX(rect);
+    newrect.origin.y = center.y-CGRectGetMidY(rect);
+    newrect.size = rect.size;
+    return newrect;
+}
+
+@implementation UIView (ViewGeometry)
+
+/**
+ *  手势管理器
+ *
+ *  @param style    手势的样式
+ *  @param delegate 代理
+ *  @param section  方法
+ */
+-(UIGestureRecognizer *)AddGestureRecognizer:(GestureRecognizerType)style delegate:(id)delegate  Section:(SEL)section
+{
+    self.userInteractionEnabled = YES;
+    switch (style) {
+        case UITapGestureRecognizerStyle:
+        {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:delegate action:section];
+            [self addGestureRecognizer:tap];
+            return tap;
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionLeftStyle:
+        {
+            UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:delegate action:section];
+            swipe.direction = UISwipeGestureRecognizerDirectionLeft;
+            [self addGestureRecognizer:swipe];
+            return swipe;
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionRightStyle:
+        {
+            UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:delegate action:section];
+            swipe.direction = UISwipeGestureRecognizerDirectionRight;
+            [self addGestureRecognizer:swipe];
+            return swipe;
+        }
+            break;
+        case UIPanGestureRecognizerStyle:
+        {
+            UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:delegate action:section];
+            [self addGestureRecognizer:pan];
+            return pan;
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionUpStyle:
+        {
+            UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:delegate action:section];
+            swipe.direction = UISwipeGestureRecognizerDirectionUp;
+            [self addGestureRecognizer:swipe];
+            return swipe;
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+// Retrieve and set the origin
+- (CGPoint) origin
+{
+    return self.frame.origin;
+}
+
+- (void) setOrigin: (CGPoint) aPoint
+{
+    CGRect newframe = self.frame;
+    newframe.origin = aPoint;
+    self.frame = newframe;
+}
+
+
+// Retrieve and set the size
+- (CGSize) size
+{
+    return self.frame.size;
+}
+
+- (void) setSize: (CGSize) aSize
+{
+    CGRect newframe = self.frame;
+    newframe.size = aSize;
+    self.frame = newframe;
+}
+
+// Query other frame locations
+- (CGPoint) bottomRight
+{
+    CGFloat x = self.frame.origin.x + self.frame.size.width;
+    CGFloat y = self.frame.origin.y + self.frame.size.height;
+    return CGPointMake(x, y);
+}
+
+- (CGPoint) bottomLeft
+{
+    CGFloat x = self.frame.origin.x;
+    CGFloat y = self.frame.origin.y + self.frame.size.height;
+    return CGPointMake(x, y);
+}
+
+- (CGPoint) topRight
+{
+    CGFloat x = self.frame.origin.x + self.frame.size.width;
+    CGFloat y = self.frame.origin.y;
+    return CGPointMake(x, y);
+}
+
+
+// Retrieve and set height, width, top, bottom, left, right
+- (CGFloat) height
+{
+    return self.frame.size.height;
+}
+
+- (void) setHeight: (CGFloat) newheight
+{
+    CGRect newframe = self.frame;
+    newframe.size.height = newheight;
+    self.frame = newframe;
+}
+
+- (CGFloat) width
+{
+    return self.frame.size.width;
+}
+
+- (void) setWidth: (CGFloat) newwidth
+{
+    CGRect newframe = self.frame;
+    newframe.size.width = newwidth;
+    self.frame = newframe;
+}
+
+- (CGFloat) top
+{
+    return self.frame.origin.y;
+}
+
+- (void) setTop: (CGFloat) newtop
+{
+    CGRect newframe = self.frame;
+    newframe.origin.y = newtop;
+    self.frame = newframe;
+}
+
+- (CGFloat) left
+{
+    return self.frame.origin.x;
+}
+
+- (void) setLeft: (CGFloat) newleft
+{
+    CGRect newframe = self.frame;
+    newframe.origin.x = newleft;
+    self.frame = newframe;
+}
+
+- (CGFloat) bottom
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void) setBottom: (CGFloat) newbottom
+{
+    CGRect newframe = self.frame;
+    newframe.origin.y = newbottom - self.frame.size.height;
+    self.frame = newframe;
+}
+
+- (CGFloat) right
+{
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (void) setRight: (CGFloat) newright
+{
+    CGFloat delta = newright - (self.frame.origin.x + self.frame.size.width);
+    CGRect newframe = self.frame;
+    newframe.origin.x += delta ;
+    self.frame = newframe;
+}
+
+// Move via offset
+- (void) moveBy: (CGPoint) delta
+{
+    CGPoint newcenter = self.center;
+    newcenter.x += delta.x;
+    newcenter.y += delta.y;
+    self.center = newcenter;
+}
+
+// Scaling
+- (void) scaleBy: (CGFloat) scaleFactor
+{
+    CGRect newframe = self.frame;
+    newframe.size.width *= scaleFactor;
+    newframe.size.height *= scaleFactor;
+    self.frame = newframe;
+}
+
+// Ensure that both dimensions fit within the given size by scaling down
+- (void) fitInSize: (CGSize) aSize
+{
+    CGFloat scale;
+    CGRect newframe = self.frame;
+    
+    if (newframe.size.height && (newframe.size.height > aSize.height))
+    {
+        scale = aSize.height / newframe.size.height;
+        newframe.size.width *= scale;
+        newframe.size.height *= scale;
+    }
+    
+    if (newframe.size.width && (newframe.size.width >= aSize.width))
+    {
+        scale = aSize.width / newframe.size.width;
+        newframe.size.width *= scale;
+        newframe.size.height *= scale;
+    }
+    
+    self.frame = newframe;	
+}
+
+- (CGFloat)centerX
+{
+    return self.center.x;
+}
+- (void)setCenterX:(CGFloat)centerX
+{
+    CGPoint center = self.center;
+    center.x = centerX;
+    self.center = center;
+}
+
+- (CGFloat)centerY
+{
+    return self.center.y;
+}
+- (void)setCenterY:(CGFloat)centerY
+{
+    CGPoint center = self.center;
+    center.y = centerY;
+    self.center = center;
+}
+
+@end

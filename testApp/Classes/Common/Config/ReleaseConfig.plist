@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMap_Key</key>
+	<string>8a824b3f1339f9d4ba4a47cd3b51607b</string>
+	<key>ServerURL</key>
+	<string>http://api.miwclub.com:10031/hi8_mobile_web/servlet/mainDes.cl</string>
+	<key>ServerUploadURL</key>
+	<string>http://api.miwclub.com:10031/hi8_mobile_web/servlet/uploadFile.cl</string>
+	<key>EaseMobKey</key>
+	<string>hxjg1999#miwpro</string>
+	<key>New item</key>
+	<string></string>
+	<key>BAIDU_MAP_AK</key>
+	<string>foj2xUGx4wyyKV7n6Q1ygcHHx28GPtRI</string>
+	<key>SystemChatId</key>
+	<string>system</string>
+	<key>CallMsgValidTime</key>
+	<integer>1800</integer>
+	<key>BUGTAGS_APP_KEY</key>
+	<string>14e2eb087d334dcd5f6e241ba417a45d</string>
+	<key>BUGTAGS_APP_SECRET</key>
+	<string>d37210715cf03df1fc2f2b4d2de6d5f0</string>
+	<key>ALIPAY_URL_SCHEMES</key>
+	<string>hbAlipaySchemes</string>
+	<key>WXPAY_APP_ID</key>
+	<string>wxa7030e690e05f443</string>
+	<key>WX_APP_SECRET</key>
+	<string>c8455fea2521045582fa6d3d10ff9fcf</string>
+	<key>EXCHANGE_RATE</key>
+	<integer>10</integer>
+	<key>DES_KEY</key>
+	<string>hexinjingu_owl01</string>
+	<key>DES_ENABLE</key>
+	<true/>
+	<key>UM_APP_KEY</key>
+	<string>56d6d3f0e0f55af3c30001f0</string>
+	<key>SHOWBugTAGS</key>
+	<false/>
+	<key>QQ_APP_ID</key>
+	<string>1105346125</string>
+	<key>QQ_APP_KEY</key>
+	<string>Q6hTluV164YSxpIK</string>
+	<key>Sina_APP_KEY</key>
+	<string>79208112</string>
+	<key>Sina_APP_SECRET</key>
+	<string>2085780b06bf648267ec5641d358724b</string>
+	<key>Apns_Push_Debug</key>
+	<string>yyzy_developer</string>
+	<key>Apns_Push</key>
+	<string>yyzy</string>
+</dict>
+</plist>
