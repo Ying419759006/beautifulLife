@@ -115,6 +115,7 @@
 		97C647041F5957220094F49A /* NSString+Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C646FF1F5957220094F49A /* NSString+Attribute.m */; };
 		97C647051F5957220094F49A /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C647011F5957220094F49A /* NSString+Size.m */; };
 		97C647061F5957220094F49A /* YLStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C647031F5957220094F49A /* YLStringTool.m */; };
+		97C647891F5D26A10094F49A /* iOS 开发规范.txt in Resources */ = {isa = PBXBuildFile; fileRef = 97C647881F5D26A10094F49A /* iOS 开发规范.txt */; };
 		97E99C321F28F24E006F90C8 /* HBPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E99C311F28F24E006F90C8 /* HBPhotosViewController.m */; };
 		97E99C351F28F267006F90C8 /* HBImagePickerPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E99C341F28F267006F90C8 /* HBImagePickerPhotoCell.m */; };
 		97E99C381F2974DE006F90C8 /* HBImagePickerCameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E99C371F2974DE006F90C8 /* HBImagePickerCameraCell.m */; };
@@ -355,6 +356,7 @@
 		97C647011F5957220094F49A /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		97C647021F5957220094F49A /* YLStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLStringTool.h; sourceTree = "<group>"; };
 		97C647031F5957220094F49A /* YLStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLStringTool.m; sourceTree = "<group>"; };
+		97C647881F5D26A10094F49A /* iOS 开发规范.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iOS 开发规范.txt"; sourceTree = "<group>"; };
 		97E99C301F28F24E006F90C8 /* HBPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBPhotosViewController.h; sourceTree = "<group>"; };
 		97E99C311F28F24E006F90C8 /* HBPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBPhotosViewController.m; sourceTree = "<group>"; };
 		97E99C331F28F267006F90C8 /* HBImagePickerPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBImagePickerPhotoCell.h; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 		975FEA581EE5071C0048831D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				97C647881F5D26A10094F49A /* iOS 开发规范.txt */,
 				975FEA591EE5071C0048831D /* Config */,
 				975FEA5B1EE5071C0048831D /* Custom */,
 				975FEA6C1EE5071C0048831D /* Libs */,
@@ -1202,6 +1205,7 @@
 				975FEB731EE530910048831D /* TestConfig.plist in Resources */,
 				975FEB721EE530910048831D /* ReleaseConfig.plist in Resources */,
 				97C642B91F4D2B680094F49A /* 菜单样式.gif in Resources */,
+				97C647891F5D26A10094F49A /* iOS 开发规范.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
